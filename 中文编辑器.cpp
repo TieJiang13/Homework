@@ -55,7 +55,7 @@ void no_operation()
 	}
 	else{
 		if(var.find(op) == var.end())
-			/*cout<<"无此变量"*/; 
+			cout<<"无此变量"; 
 		else{
 			op_var = op;
 			cin >> op;
