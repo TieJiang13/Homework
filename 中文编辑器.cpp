@@ -83,8 +83,14 @@ void operation()
 	else if(op=="看看")
 	{
 		cin>>op_var;
-		if(var.find(op_var) == var.end())
-			cout<<""<<op_var<<""<<endl;
+			/*去除引号 */ 
+		if (!var.count(op_var)) {
+				if (op_var[0] == '"' && op_var[op_var.size()-1] == '"') 
+					cout << op_var.substr(1,op_var.size()-2) << endl;
+				else if (op_var.substr(0,2) == "“" && op_var.substr(op_var.size()-2,2) == "”") 
+					cout << op_var.substr(2,op_var.size()-4) << endl; 
+					} 
+		// 
 		else
 			cout<<R_change_to_num(var[op_var])<<endl;
 	}
